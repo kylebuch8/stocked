@@ -1,0 +1,12 @@
+Search
+<input type="text" name="search" ng-model="searchTerm" ng-change="search()">
+
+<div>
+    <div ng-repeat="result in results">
+        <a ui-sref="beer({ beerId: result.id })">
+            <p>{{result.name}}</p>
+            <p>{{result.breweries[0].name}}</p>
+            <hr>
+        </a>
+    </div>
+</div>

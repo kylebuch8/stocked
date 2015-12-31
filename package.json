@@ -1,0 +1,27 @@
+{
+  "name": "stocked",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-less": "^3.0.5",
+    "handlebars": "^4.0.5",
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0",
+    "q": "^1.4.1",
+    "ratebeer-api": "https://github.com/niklasHagner/ratebeer-api.git",
+    "request": "^2.67.0",
+    "vision": "^4.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.6",
+    "tiny-lr": "^0.2.1"
+  }
+}

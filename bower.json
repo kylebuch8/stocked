@@ -1,0 +1,25 @@
+{
+  "name": "stocked",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kyle Buchanan <kylebuch8@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "firebase": "~2.3.2",
+    "angularfire": "~1.1.3"
+  }
+}
