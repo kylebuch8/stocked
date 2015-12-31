@@ -3,14 +3,63 @@
 
     .beer {
         text-align: center;
-        padding: 16px;
-        width: 50%;
+        padding: @smSpacing;
+        margin-bottom: @lgSpacing;
+        width: 100%;
+
+        @media @smScreen {
+            width: 50%;
+        }
+
+        @media @lgScreen {
+            width: 33%;
+        }
 
         .image-bg {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 150px;
+            padding-bottom: 30%;
+            min-height: 150px;
+
+            @media @mdScreen {
+                min-height: 200px;
+            }
+        }
+        .content {
+            padding: @smSpacing;
+            border-bottom: 1px solid @dk-grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .mainText {
+                flex-direction: column;
+                justify-content: center;
+                flex-grow: 1;
+                padding: @smSpacing;
+                
+                .breweryName {
+                    .smItalic;
+                }
+                .beerName {
+                    .lgTitle;
+                    margin: @smSpacing/2 0px;
+                }
+                .beerStyle {
+                    .smCaps;
+                }
+            }
+            .beerDetails {
+                flex-grow: 0;
+                width: 50%;
+                margin: auto;
+                margin-top: @mdSpacing;
+                display: flex;
+                align-content: center;
+                justify-content: space-around;
+                .labelAnswer;
+            }
         }
     }
 }

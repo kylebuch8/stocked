@@ -228,11 +228,118 @@ ui-view {
 .inventory .beer {
   text-align: center;
   padding: 16px;
-  width: 50%;
+  margin-bottom: 48px;
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .inventory .beer {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .inventory .beer {
+    width: 33%;
+  }
 }
 .inventory .beer .image-bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 150px;
+  padding-bottom: 30%;
+  min-height: 150px;
+}
+@media only screen and (min-width: 800px) {
+  .inventory .beer .image-bg {
+    min-height: 200px;
+  }
+}
+.inventory .beer .content {
+  padding: 16px;
+  border-bottom: 1px solid #353b49;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inventory .beer .content .mainText {
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 16px;
+}
+.inventory .beer .content .mainText .breweryName {
+  font-family: "schoolbook-web", serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #353b49;
+}
+.inventory .beer .content .mainText .beerName {
+  font-family: "schoolbook-web", serif;
+  font-style: normal;
+  font-size: 34px;
+  color: #353b49;
+  margin: 8px 0px;
+}
+.inventory .beer .content .mainText .beerStyle {
+  font-family: "schoolbook-web", serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 14px;
+  color: #56514e;
+}
+.inventory .beer .content .beerDetails {
+  flex-grow: 0;
+  width: 50%;
+  margin: auto;
+  margin-top: 24px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  font-family: "schoolbook-web", serif;
+  font-style: normal;
+  font-size: 18px;
+  color: #353b49;
+  font-weight: bold;
+}
+.smItalic {
+  font-family: "schoolbook-web", serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #353b49;
+}
+.lgTitle {
+  font-family: "schoolbook-web", serif;
+  font-style: normal;
+  font-size: 34px;
+  color: #353b49;
+}
+.labelAnswer {
+  font-family: "schoolbook-web", serif;
+  font-style: normal;
+  font-size: 18px;
+  color: #353b49;
+  font-weight: bold;
+}
+.smCaps {
+  font-family: "schoolbook-web", serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 14px;
+  color: #56514e;
+}
+.label {
+  color: #51596f;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "ff-good-headline-web-pro-con", sans-serif;
+  text-transform: uppercase;
+}
+p {
+  margin: 0px;
+}
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
 }
