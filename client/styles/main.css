@@ -343,3 +343,11 @@ a:hover,
 a:visited {
   text-decoration: none;
 }
+.frame {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  border: 20px solid #49587B;
+}
