@@ -2,6 +2,7 @@
 
 angular.module('stocked-app.components.inventory', [
     'stocked-app.common.services.stocked',
+    'stocked-app.common.directives.stocked-beer',
     'ui.router'
 ])
     .config(config)
