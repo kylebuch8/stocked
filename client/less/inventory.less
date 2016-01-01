@@ -1,5 +1,66 @@
+
+.search {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: @smSpacing;
+    padding-bottom: 0px;
+    flex-flow: row no-wrap;
+    max-width: 800px;
+
+    input {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 0px;
+    }
+    button {
+        width: @lgSpacing;
+        flex-shrink: 0;
+    }
+    input, button {
+        height: @lgSpacing;
+        padding: @smSpacing;
+    }
+}
+
+.totals {
+    display: flex;
+    width: 100%;
+    background-color: @dk-grey;
+    padding: @mdSpacing;
+    min-height: 150px;
+    justify-content: space-around;
+    align-items: flex-start;
+    .white;
+
+    .number {
+        .xlSerif;
+        
+        @media @mdScreen {
+            & + .description {
+                margin-left: @smSpacing;
+                text-align: left;
+            }
+        }
+    }
+    .description {
+        .mdSansItalic
+    }
+
+    .all, .breweries, .beers {
+        text-align: center;
+        padding: @smSpacing;
+
+        @media @mdScreen {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
 .inventory {
     .flex-flow(row wrap);
+    padding: @mdSpacing;
+    background-color: white;
 
     .beer {
         text-align: center;
@@ -16,19 +77,36 @@
         }
 
         .image-bg {
+            position: relative;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             padding-bottom: 30%;
             min-height: 150px;
+            box-shadow: inset 0 0 24px rgba(0,0,0,.5);
 
             @media @mdScreen {
                 min-height: 200px;
             }
+
+            .quantity {
+                position: absolute;
+                right: @smSpacing;
+                bottom: -24px;
+                border-radius: 50%;
+                background-color: @orange;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                .mdSansItalic;
+            }
         }
         .content {
             padding: @smSpacing;
-            border-bottom: 1px solid @dk-grey;
+            border-top: 10px solid @lt-grey;
             display: flex;
             flex-direction: column;
             justify-content: space-between;

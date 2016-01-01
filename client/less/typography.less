@@ -1,3 +1,6 @@
+body {
+	font-family: @serif;
+}
 .smItalic {
     font-family: @serif;
     font-style: italic;
@@ -9,6 +12,7 @@
     font-style: normal;
     font-size: @lgText;
     color: @dk-grey;
+    line-height: @lgText;
 }
 .labelAnswer {
 	font-family: @serif;
@@ -33,6 +37,26 @@
 	font-family: @sans;
 	text-transform: uppercase;
 }
+.xlSerif {
+	.white;
+	font-family: @serif;
+	font-size: @lgText*1.5;
+
+	@media @smScreen {
+		font-size: @lgText*2;
+	}
+
+	@media @mdScreen {
+		font-size: @lgText*3;
+	}
+}
+.mdSansItalic {
+	font-family: @sans;
+	font-style: italic;
+	font-weight: normal;
+	.white;
+	font-size: 24px;
+}
 
 p {
 	margin: 0px;
@@ -40,4 +64,8 @@ p {
 
 a, a:hover, a:visited {
 	text-decoration: none;
+}
+
+.white {
+	color: white;
 }

@@ -3,7 +3,9 @@
 @import 'scaffolding';
 @import 'inventory';
 @import 'variables';
-@import 'styles';
+@import 'typography';
+@import 'forms';
+@import 'images';
 
 .frame {
 	position: fixed;
@@ -11,5 +13,9 @@
     right: 0px;
     bottom: 0px;
     top: 0px;
-    border: 20px solid #49587B;
+    border: 20px solid @dk-grey;
+}
+
+body {
+	background-color: @dk-grey;
 }
