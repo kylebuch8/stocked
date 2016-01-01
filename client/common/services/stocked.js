@@ -9,11 +9,12 @@ StockedService.$inject = [
     '$q',
     '$http',
     '$firebaseAuth',
+    '$firebaseObject',
     '$firebaseArray',
     'config'
 ];
 
-function StockedService($q, $http, $firebaseAuth, $firebaseArray, config) {
+function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArray, config) {
     var ref = new Firebase(config.firebaseUrl);
     var service = {
         login: login,
@@ -21,7 +22,8 @@ function StockedService($q, $http, $firebaseAuth, $firebaseArray, config) {
         search: search,
         getBeerById: getBeerById,
         addBeerToInventory: addBeerToInventory,
-        getInventory: getInventory
+        getInventory: getInventory,
+        getInventoryBeerById: getInventoryBeerById
     };
 
     function login() {
@@ -83,6 +85,13 @@ function StockedService($q, $http, $firebaseAuth, $firebaseArray, config) {
         var inventoryRef = ref.child('inventories/' + authData.uid);
 
         return $firebaseArray(inventoryRef);
+    }
+
+    function getInventoryBeerById(id) {
+        var authData = auth().$getAuth();
+        var beerRef = ref.child('inventories/' + authData.uid + '/' + id);
+
+        return $firebaseObject(beerRef);
     }
 
     return service;

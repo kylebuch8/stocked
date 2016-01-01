@@ -2,6 +2,7 @@
 
 angular.module('stocked-app.components.search-result', [
     'stocked-app.common.services.stocked',
+    'stocked-app.common.directives.stocked-beer',
     'ui.router'
 ])
     .config(config)

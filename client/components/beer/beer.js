@@ -26,13 +26,11 @@ function config($stateProvider) {
 BeerController.$inject = ['$scope', '$stateParams', 'StockedService'];
 
 function BeerController($scope, $stateParams, StockedService) {
-    StockedService.getBeerById($stateParams.beerId).then(function (response) {
-        $scope.beer = response.data.data;
-    });
+    $scope.beer = StockedService.getInventoryBeerById($stateParams.beerId);
 
-    $scope.add = function () {
-        StockedService.addBeerToInventory($scope.beer).then(function (data) {
-            console.log(data);
-        });
-    };
+    // $scope.add = function () {
+    //     StockedService.addBeerToInventory($scope.beer).then(function (data) {
+    //         console.log(data);
+    //     });
+    // };
 }
