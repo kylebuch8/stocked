@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     padding: @smSpacing;
-    padding-bottom: 0px;
     flex-flow: row no-wrap;
     max-width: 800px;
 
@@ -28,6 +27,7 @@
     width: 100%;
     background-color: @dk-grey;
     padding: @mdSpacing;
+    padding-top: 0px;
     min-height: 150px;
     justify-content: space-around;
     align-items: flex-start;
@@ -35,7 +35,7 @@
 
     .number {
         .xlSerif;
-        
+
         @media @mdScreen {
             & + .description {
                 margin-left: @smSpacing;
@@ -57,7 +57,7 @@
         }
     }
 }
-.inventory {
+.mainContent {
     .flex-flow(row wrap);
     padding: @mdSpacing;
     background-color: white;
@@ -118,7 +118,7 @@
                 padding: @smSpacing;
                 
                 .breweryName {
-                    .smItalic;
+                    .mdItalic;
                 }
                 .beerName {
                     .lgTitle;
@@ -138,6 +138,39 @@
                 justify-content: space-around;
                 .labelAnswer;
             }
+        }
+    }
+    &.results {
+        .beerName {
+            .mdTitle;
+        }
+        .breweryName {
+            .smItalic;
+        }
+        .result {
+            padding: @smSpacing;
+            border-bottom: 2px solid @lt-grey;
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+    &.mainBeer {
+        .beer {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .quantity {
+            background-color: @orange;
+            padding: @smSpacing;
+            .white;
+        }
+        .description {
+            text-align: justify;
+            line-height: @mdText*1.5;
+            margin: @mdSpacing 0px;
         }
     }
 }
