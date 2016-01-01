@@ -1,0 +1,16 @@
+<div class="image-bg" ng-style="{ 'background-image': 'url(' + beer.labels.large + ')'}">
+    <div class="quantity">
+        {{beer.quantity || 'N/A'}}
+    </div>
+</div>
+<div class="content" ng-style="{'border-color':'#' + beer.srm.hex}">
+    <div class="mainText flex">
+        <p class="breweryName">{{beer.breweries[0].name}}</p>
+        <p class="beerName">{{beer.name}}</p>
+        <p class="beerStyle">{{beer.style.shortName}}</p>
+    </div>
+    <div class="flex beerDetails">
+        <div><span class="label">IBU</span> <span class="labelAnswer">{{beer.ibu || 'N/A'}}</span></div>
+        <div><span class="label">ABV</span> <span class="labelAnswer">{{beer.abv + '%' || 'N/A'}}</span></div>
+    </div>
+</div>
