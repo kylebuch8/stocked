@@ -4,6 +4,7 @@ angular.module('stocked-app', [
     'stocked-app.components.login',
     'stocked-app.components.inventory',
     'stocked-app.components.search',
+    'stocked-app.components.search-result',
     'stocked-app.components.beer',
     'ui.router'
 ])
