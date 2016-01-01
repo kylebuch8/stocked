@@ -61,7 +61,7 @@
 </div>
 
 <div class="mainContent inventory">
-    <a class="beer" ui-sref="beer({ beerId: beer.id })" ng-repeat="beer in inventory">
+    <a class="beer" ui-sref="beer({ beerId: beer.$id })" ng-repeat="beer in inventory">
         <stocked-beer></stocked-beer>
     </a>
 </div>
