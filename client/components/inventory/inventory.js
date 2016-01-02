@@ -24,12 +24,18 @@ function config($stateProvider) {
             });
 }
 
-InventoryController.$inject = ['$scope', 'StockedService'];
+InventoryController.$inject = ['$scope', '$state', 'StockedService'];
 
-function InventoryController($scope, StockedService) {
+function InventoryController($scope, $state, StockedService) {
     $scope.inventory = StockedService.getInventory();
 
     $scope.inventory.$loaded(function () {
         $scope.uniqueBeers = Object.keys($scope.inventory.stock).length;
     });
+
+    $scope.search = function () {
+        $state.go('search', {
+            term: $scope.searchTerm
+        });
+    };
 }

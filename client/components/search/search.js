@@ -12,7 +12,8 @@ config.$inject = ['$stateProvider'];
 function config($stateProvider) {
     $stateProvider
             .state('search', {
-                url: '/search',
+                url: '/search/?term',
+                reloadOnSearch: false,
                 templateUrl: 'components/search/search.html',
                 controller: 'SearchController',
                 resolve: {
@@ -23,9 +24,11 @@ function config($stateProvider) {
             });
 }
 
-SearchController.$inject = ['$scope', 'StockedService'];
+SearchController.$inject = ['$scope', '$stateParams', 'StockedService'];
 
-function SearchController($scope, StockedService) {
+function SearchController($scope, $stateParams, StockedService) {
+    $scope.searchTerm = $stateParams.term;
+
     $scope.search = function () {
         if ($scope.searchTerm.length > 1) {
             StockedService.search($scope.searchTerm).then(function (response) {
@@ -35,4 +38,8 @@ function SearchController($scope, StockedService) {
             });
         }
     };
+
+    if ($scope.searchTerm) {
+        $scope.search();
+    }
 }

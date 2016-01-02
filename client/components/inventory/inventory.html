@@ -1,15 +1,13 @@
-<!-- <div class="frame"></div> -->
-<div class="search">
-    <input type="text" placeholder="Search for a Beer" name="search" ng-model="searchTerm" ng-change="search()">
+<form class="search" ng-submit="search()">
+    <input type="text" autocomplete="off" placeholder="Search for a Beer" name="search" ng-model="searchTerm">
     <button class="yellow">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
-        <g>
-            <path class="white" d="M39.2,34.5L27.3,22.7c1.4-2.3,2.3-5,2.3-7.9C29.6,6.6,23,0,14.8,0C6.6,0,0,6.6,0,14.8s6.6,14.8,14.8,14.8
-                c2.9,0,5.6-0.9,7.9-2.3l11.8,11.8c1.2,1.2,3.2,1.2,4.4,0l0.2-0.2C40.4,37.7,40.4,35.8,39.2,34.5z M5.2,14.8c0-5.3,4.3-9.6,9.6-9.6
-                c5.3,0,9.6,4.3,9.6,9.6c0,5.3-4.3,9.6-9.6,9.6C9.5,24.4,5.2,20.1,5.2,14.8z"/>
-        </g>
+            <g>
+                <path class="white" d="M39.2,34.5L27.3,22.7c1.4-2.3,2.3-5,2.3-7.9C29.6,6.6,23,0,14.8,0C6.6,0,0,6.6,0,14.8s6.6,14.8,14.8,14.8
+                    c2.9,0,5.6-0.9,7.9-2.3l11.8,11.8c1.2,1.2,3.2,1.2,4.4,0l0.2-0.2C40.4,37.7,40.4,35.8,39.2,34.5z M5.2,14.8c0-5.3,4.3-9.6,9.6-9.6
+                    c5.3,0,9.6,4.3,9.6,9.6c0,5.3-4.3,9.6-9.6,9.6C9.5,24.4,5.2,20.1,5.2,14.8z"/>
+            </g>
         </svg>
-
     </button>
     <button class="orange">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -32,7 +30,7 @@
         </g>
         </svg>
     </button>
-</div>
+</form>
 <div class="totals">
     <div class="all">
         <div class="number">
