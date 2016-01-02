@@ -2,6 +2,12 @@
     <div class="quantity">
         {{beer.quantity || 'N/A'}}
     </div>
+    <div class="increase" ng-click="add()">
+        +
+    </div>
+    <div class="decrease" ng-click="subtract()">
+        -
+    </div>
 </div>
 <div class="content" ng-style="{'border-color':'#' + beer.srm.hex}">
     <div class="mainText flex">
@@ -11,6 +17,7 @@
     </div>
     <div class="flex beerDetails">
         <div><span class="label">IBU</span> <span class="labelAnswer">{{beer.ibu || 'N/A'}}</span></div>
+        <div><img ng-src="/assets/images/glassware/glasswareId-{{beer.glasswareId}}.svg" ng-attr-title="{{beer.glass.name}}" height="40px"/></div>
         <div><span class="label">ABV</span> <span class="labelAnswer">{{beer.abv + '%' || 'N/A'}}</span></div>
     </div>
 </div>

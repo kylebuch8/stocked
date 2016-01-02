@@ -59,14 +59,13 @@
 }
 .mainContent {
     .flex-flow(row wrap);
-    padding: @mdSpacing;
+    /*padding: @mdSpacing;*/
     background-color: white;
 
     .beer {
         display: inline-block;
         text-align: center;
         padding: @smSpacing;
-        margin-bottom: @lgSpacing;
         width: 100%;
 
         @media @smScreen {
@@ -75,6 +74,7 @@
 
         @media @lgScreen {
             width: 33%;
+            margin-bottom: @lgSpacing;
         }
 
         .image-bg {
@@ -92,7 +92,7 @@
 
             .quantity {
                 position: absolute;
-                right: @smSpacing;
+                left: @smSpacing;
                 bottom: -24px;
                 border-radius: 50%;
                 background-color: @orange;
@@ -103,6 +103,9 @@
                 align-items: center;
                 text-align: center;
                 .mdSansItalic;
+            }
+            .increase, .decrease {
+                display: none;
             }
         }
         .content {
@@ -136,6 +139,7 @@
                 margin-top: @mdSpacing;
                 display: flex;
                 align-content: center;
+                align-items: center;
                 justify-content: space-around;
                 .labelAnswer;
             }
@@ -158,10 +162,40 @@
         }
     }
     &.mainBeer {
+        padding: 0px;
+
         .beer {
             width: 100%;
-            max-width: 800px;
-            margin: auto;
+            /*max-width: 800px;*/
+            /*margin: auto;*/
+            padding: 0px;
+
+            .image-bg {
+                @media @lgScreen {
+                    padding-bottom: 300px;
+                }
+                .increase, .decrease {
+                    position: absolute;
+                    bottom: -24px;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    .labelAnswer;
+                    .white;
+                }
+                .decrease {
+                    right: @smSpacing*4;
+                    background-color: @yellow
+                }
+                .increase {
+                    right: @smSpacing;
+                    background-color: @dk-grey;
+                }
+            }
         }
         .quantity {
             background-color: @orange;

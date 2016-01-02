@@ -28,4 +28,15 @@ InventoryController.$inject = ['$scope', 'StockedService'];
 
 function InventoryController($scope, StockedService) {
     $scope.inventory = StockedService.getInventory();
+
+    //find number of breweries, total number of beers
+    var breweries = [];
+    $scope.totalQuantity = 0;
+
+    angular.forEach($scope.inventory, function(beer) {
+        breweries.push(beer.breweries[0].id);
+        $scope.totalQuantity += beer.quantity;
+    });
+    //need to remove duplicates
+    $scope.breweriesCount = breweries.length;
 }

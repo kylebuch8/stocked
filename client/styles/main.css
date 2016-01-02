@@ -299,14 +299,13 @@ ui-view {
   -moz-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  padding: 24px;
+  /*padding: @mdSpacing;*/
   background-color: white;
 }
 .mainContent .beer {
   display: inline-block;
   text-align: center;
   padding: 16px;
-  margin-bottom: 48px;
   width: 100%;
 }
 @media only screen and (min-width: 600px) {
@@ -317,6 +316,7 @@ ui-view {
 @media only screen and (min-width: 1200px) {
   .mainContent .beer {
     width: 33%;
+    margin-bottom: 48px;
   }
 }
 .mainContent .beer .image-bg {
@@ -335,7 +335,7 @@ ui-view {
 }
 .mainContent .beer .image-bg .quantity {
   position: absolute;
-  right: 16px;
+  left: 16px;
   bottom: -24px;
   border-radius: 50%;
   background-color: #fd3f08;
@@ -350,6 +350,10 @@ ui-view {
   font-weight: normal;
   color: white;
   font-size: 24px;
+}
+.mainContent .beer .image-bg .increase,
+.mainContent .beer .image-bg .decrease {
+  display: none;
 }
 .mainContent .beer .content {
   padding: 16px;
@@ -393,6 +397,7 @@ ui-view {
   margin-top: 24px;
   display: flex;
   align-content: center;
+  align-items: center;
   justify-content: space-around;
   font-family: "schoolbook-web", serif;
   font-style: normal;
@@ -420,10 +425,45 @@ ui-view {
 .mainContent.results .result:last-child {
   border: none;
 }
+.mainContent.mainBeer {
+  padding: 0px;
+}
 .mainContent.mainBeer .beer {
   width: 100%;
-  max-width: 800px;
-  margin: auto;
+  /*max-width: 800px;*/
+  /*margin: auto;*/
+  padding: 0px;
+}
+@media only screen and (min-width: 1200px) {
+  .mainContent.mainBeer .beer .image-bg {
+    padding-bottom: 300px;
+  }
+}
+.mainContent.mainBeer .beer .image-bg .increase,
+.mainContent.mainBeer .beer .image-bg .decrease {
+  position: absolute;
+  bottom: -24px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "schoolbook-web", serif;
+  font-style: normal;
+  font-size: 18px;
+  color: #51596f;
+  font-weight: bold;
+  color: white;
+}
+.mainContent.mainBeer .beer .image-bg .decrease {
+  right: 64px;
+  background-color: #fd9f19;
+}
+.mainContent.mainBeer .beer .image-bg .increase {
+  right: 16px;
+  background-color: #51596f;
 }
 .mainContent.mainBeer .quantity {
   background-color: #fd3f08;
