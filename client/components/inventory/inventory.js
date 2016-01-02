@@ -28,4 +28,7 @@ InventoryController.$inject = ['$scope', 'StockedService'];
 
 function InventoryController($scope, StockedService) {
     $scope.inventory = StockedService.getInventory();
+    $scope.inventory.$loaded(function () {
+        $scope.uniqueBeers = Object.keys($scope.inventory.stock).length;
+    });
 }

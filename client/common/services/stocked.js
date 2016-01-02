@@ -23,7 +23,8 @@ function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArra
         getBeerById: getBeerById,
         addBeerToInventory: addBeerToInventory,
         getInventory: getInventory,
-        getInventoryBeerById: getInventoryBeerById
+        getInventoryBeerById: getInventoryBeerById,
+        updateInventoryCount: updateInventoryCount
     };
 
     function login() {
@@ -76,6 +77,7 @@ function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArra
 
     function addBeerToInventory(beer) {
         var inventory = getInventory();
+        beer.quantity = 1;
 
         return inventory.$add(beer);
     }
@@ -84,14 +86,27 @@ function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArra
         var authData = auth().$getAuth();
         var inventoryRef = ref.child('inventories/' + authData.uid);
 
-        return $firebaseArray(inventoryRef);
+        return $firebaseObject(inventoryRef);
     }
 
     function getInventoryBeerById(id) {
         var authData = auth().$getAuth();
-        var beerRef = ref.child('inventories/' + authData.uid + '/' + id);
+        var beerRef = ref.child('inventories/' + authData.uid + '/stock/' + id);
 
         return $firebaseObject(beerRef);
+    }
+
+    function updateInventoryCount(increment) {
+        var authData = auth().$getAuth();
+        var inventoryCountRef = ref.child('inventories/' + authData.uid + '/count');
+
+        inventoryCountRef.transaction(function (currentValue) {
+            if (!currentValue) {
+                return 0;
+            }
+
+            return (increment) ? currentValue + 1 : currentValue - 1;
+        });
     }
 
     return service;
