@@ -76,10 +76,12 @@ function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArra
     }
 
     function addBeerToInventory(beer) {
-        var inventory = getInventory();
+        var stock = getInventoryStock();
         beer.quantity = 1;
 
-        return inventory.$add(beer);
+        updateInventoryCount(true);
+
+        return stock.$add(beer);
     }
 
     function getInventory() {
@@ -94,6 +96,13 @@ function StockedService($q, $http, $firebaseAuth, $firebaseObject, $firebaseArra
         var beerRef = ref.child('inventories/' + authData.uid + '/stock/' + id);
 
         return $firebaseObject(beerRef);
+    }
+
+    function getInventoryStock() {
+        var authData = auth().$getAuth();
+        var beerRef = ref.child('inventories/' + authData.uid + '/stock');
+
+        return $firebaseArray(beerRef);
     }
 
     function updateInventoryCount(increment) {
