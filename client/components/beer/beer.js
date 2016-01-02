@@ -34,16 +34,17 @@ function BeerController($scope, $stateParams, StockedService) {
         }
     });
 
-
     $scope.add = function () {
         $scope.beer.quantity += 1;
+        StockedService.updateInventoryCount(true);
     };
 
     $scope.subtract = function () {
         if ($scope.beer.quantity === 0) {
             return;
         }
-        
+
         $scope.beer.quantity -= 1;
+        StockedService.updateInventoryCount(false);
     };
 }

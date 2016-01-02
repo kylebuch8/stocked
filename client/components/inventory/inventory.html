@@ -36,7 +36,7 @@
 <div class="totals">
     <div class="all">
         <div class="number">
-            {{beersCount || 0}}
+            {{inventory.count}}
         </div>
         <div class="description">
             Total Beers
@@ -44,7 +44,7 @@
     </div>
     <div class="beers">
         <div class="number">
-            {{inventory.length || 0}}
+            {{uniqueBeers}}
         </div>
         <div class="description">
             Unique Beers
@@ -52,7 +52,6 @@
     </div>
     <div class="breweries">
         <div class="number">
-            {{breweriesCount || 0}}
         </div>
         <div class="description">
             Unique Breweries
@@ -61,7 +60,7 @@
 </div>
 
 <div class="mainContent inventory">
-    <a class="beer" ui-sref="beer({ beerId: beer.$id })" ng-repeat="beer in inventory | orderBy:'quantity':true">
+    <a class="beer" ui-sref="beer({ beerId: key })" ng-repeat="(key, beer) in inventory.stock">
         <stocked-beer></stocked-beer>
     </a>
 </div>
