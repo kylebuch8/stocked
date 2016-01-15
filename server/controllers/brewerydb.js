@@ -1,11 +1,10 @@
 'use strict';
 
-var config = require('../../config');
 const request = require('request');
 const ratebeer = require('../controllers/ratebeer.js');
 const baseUrl = 'http://api.brewerydb.com/v2/';
 const defaultParams = {
-    key: process.env.brewerydb || config.brewerydb.apiKey
+    key: process.env.brewerydb || require('../../config').brewerydb.apiKey
 };
 
 module.exports = {
