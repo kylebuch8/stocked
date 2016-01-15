@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "node": "4.1.1"
   },
   "dependencies": {
+    "bower": "^1.7.2",
     "gulp-less": "^3.0.5",
     "handlebars": "^4.0.5",
     "hapi": "^11.1.2",
@@ -26,8 +28,5 @@
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.0.6",
     "tiny-lr": "^0.2.1"
-  },
-  "scripts": {
-    "start": "node index.js"
   }
 }
