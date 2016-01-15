@@ -8,9 +8,9 @@ angular.module('stocked-app.components.inventory', [
     .config(config)
     .controller('InventoryController', InventoryController);
 
-config.inject = ['$stateProvider'];
+config.inject = ['$stateProvider', '$urlRouterProvider'];
 
-function config($stateProvider) {
+function config($stateProvider, $urlRouterProvider) {
     $stateProvider
             .state('inventory', {
                 url: '/inventory',
@@ -22,6 +22,8 @@ function config($stateProvider) {
                     }]
                 }
             });
+
+    $urlRouterProvider.otherwise('/inventory');
 }
 
 InventoryController.$inject = ['$scope', '$state', 'StockedService'];
