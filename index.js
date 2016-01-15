@@ -7,7 +7,6 @@ var routes = require('./server/routes/api');
 var appRoutes = require('./server/routes/app');
 
 server.connection({
-    host: 'localhost',
     port: process.env.PORT || 8000
 });
 
