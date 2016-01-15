@@ -8,7 +8,7 @@ var appRoutes = require('./server/routes/app');
 
 server.connection({
     host: 'localhost',
-    port: 8000
+    port: process.env.port || 8000
 });
 
 server.register(require('vision'), (err) => {

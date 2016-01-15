@@ -5,7 +5,7 @@ const request = require('request');
 const ratebeer = require('../controllers/ratebeer.js');
 const baseUrl = 'http://api.brewerydb.com/v2/';
 const defaultParams = {
-    key: config.brewerydb.apiKey
+    key: process.env.brewerydb || config.brewerydb.apiKey
 };
 
 module.exports = {
