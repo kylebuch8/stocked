@@ -584,6 +584,60 @@ path.white,
 polygon.white {
   fill: white;
 }
+.login {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+}
+.login h1 {
+  font-size: 50px;
+}
+.login button {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding: 16px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: #ceeaeb;
+  color: #3d6c6e;
+  width: 100%;
+  margin: 32px;
+  max-width: 280px;
+}
+.login button img {
+  margin-top: 8px;
+  height: 25px;
+}
 .frame {
   position: fixed;
   left: 0px;
